@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'teky.wsgi.application'
 DATABASES={
    'default':{
       'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'postgres',
+      'NAME':'logindata',
       'USER':'postgres',
       'PASSWORD':'1234567',
       'HOST':'localhost',
