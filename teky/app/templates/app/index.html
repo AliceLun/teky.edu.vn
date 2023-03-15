@@ -1,19 +1,410 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>daotao.teky.edu.vn</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+{%load  static %}
         
+<!DOCTYPE html>
+<html lang="en">
+  <!--Variables to set active page in sidebar-->
+  <head>
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-language" content="vi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Template">
+    <meta name="COPYRIGHT" content="© Template">
+    <meta name="robots" content="noodp,index,follow">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="app/images/favicon.ico">
+    <title>Teky LMS</title>
+    <!--Include CSS-->
+    <link href="{%static 'app/css/style.min.css'%}" rel="stylesheet">
+    <link href="{%static 'app/css/css.css'%}" rel="stylesheet">
+    <link href = "https://fonts.googleapis.com/css?family=Roboto" rel = "stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>  
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"> </script> 
+
+  </head>
+  <body>
+    <div class="l-page is-user">
+      <div class="l-bg-border">
+        <!--Header part-->
+        <div class="l-nav clearfix">
+          <div class="c-header-left is-2">
+            <div class="c-logo"><a href="/"><img src="{% static 'app/images/teky/logo.png' %}"></a></div>
+            <div class="c-header-title"><span>Lịch của tôi</span>
+            </div>
+            <button class="c-search-expand js-search-expand" type="button"><i class="icon-search-black"></i></button>
+            <button class="c-menu-expand js-menu-expand" type="button"><i class="icon-ico-menu"></i></button>
+          </div>
+          <div class="c-header-setting clearfix">
+            <div class="c-search">
+              <div class="c-search__inner">
+                <input class="form-control" type="text" placeholder="Bạn muốn tìm?...">
+                <button class="c-search__btn" type="button"><i class="icon-search-black"></i></button>
+              </div>
+            </div>
+            <div class="c-setting"> 
+              <ul class="clearfix">
+                <li class="is-notification">
+
+                  <div class="is-ontop__a"><a class="js-hidden-notification" href="/"><i class="icon-notification"></i><span>9+</span></a></div>
+                  <div class="c-user-setting__notification__dropdown">
+                    <ul class="clearfix">
+                      <li><span>Có 4 tin mới</span></li>
+                      <li><a href="/#"><span class="c-imguser-notification"><img src="upload/user1-notification.png"></span><span class="c-textmid-dropdown"><span class="is-color-black">Cô <span class="is-color-blue">Jean Foo </span><span class="is-color-black">Có gửi tin nhắn cho bạn</span></span><span class="is-text-bottom">Bạn nhớ làm bài tập nhé</span></span><span class="c-textright-dropdown"><span>20/08/2020</span><span>15:35</span></span></a></li>
+                      <li class="is-read"><a href="/#"><span class="c-imguser-notification"><i class="icon-bell-notification"></i></span><span class="c-textmid-dropdown"><span class="is-color-black">Thông báo từ BQT TEKY</span><span class="is-text-bottom">Hệ thống chuẩn bị cập nhập ABCXYZ</span></span><span class="c-textright-dropdown"><span>17/08/2020</span><span>12:30</span></span></a></li>
+                      <li><a href="/#"><span class="c-imguser-notification"><i class="icon-calendar-notification"></i></span><span class="c-textmid-dropdown"><span class="is-color-black">Thông báo về <span class="is-color-blue">lịch học </span></span><span class="is-text-bottom">Lớp Bé làm Game bắt đầu lúc 12h</span></span><span class="c-textright-dropdown"><span>17/08/2020</span><span>11:10</span></span></a></li>
+                      <li><a href="/#"><span class="c-imguser-notification"><img src="upload/user2-notification.png"></span><span class="c-textmid-dropdown"><span class="is-color-black">Thầy <span class="is-color-blue">Lê Quang Tuấn</span></span><span class="is-text-bottom">Nhận xét BTVN của bạn</span></span><span class="c-textright-dropdown"><span>16/08/2020</span><span>16:00</span></span></a></li>
+                      <li><a href="/#"><span class="c-imguser-notification is-people"><img src="upload/user3-notification.png"></span><span class="c-textmid-dropdown"><span class="is-color-blue">Hanna Kieu và 19 người khác <span class="is-color-black">thích ảnh</span></span><span class="is-text-bottom">"Hôm nay chán quá"</span></span><span class="c-textright-dropdown"><span>17/08/2020</span><span>12:30</span></span></a></li>
+                      <li><a href="/#"><span>Xem tất cả</span></a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="/"><i class="icon-call"></i></a></li>
+                <li class="is-chat">
+                  <div class="is-ontop__a"><a href="/"><i class="icon-chat-bubble"></i><span>2</span></a></div>
+                </li>
+                <li class="is-money"><a href="/"><i class="icon-ico-star"></i><span>980.000</span></a></li>
+              </ul>
+            </div>
+            <div class="c-user-setting">
+              <div class="c-user-setting__avatar"><a class="js-hidden-setting" href="/"><img src="upload/user.png"><i class="icon-settingss"></i></a>
+                <div class="c-user-setting__avatar__dropdown">
+                  <ul class="clearfix">
+                    <li><a href="/#"><i class="topbar-accsetting"></i><span class="title">Chuyển tài khoản</span><span class="right">Kiều Vũ Tuệ Nhi</span></a></li>
+                    <li><a href="/#"><i class="topbar-setting"></i><span class="title">Cấu hình</span><span class="right is-green">Hoạt động</span></a></li>
+                    <li><a href="/#"><i class="topbar-help"></i><span class="title">Trợ giúp</span></a></li>
+                    <li><a href="/#"><i class="topbar-logout"></i><span class="title">Thoát khỏi hệ thống</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-menu-left__top is-top">
+            <ul>
+              <li><a href="javascript:;"><i class="icon-menu-four"></i></a>
+                <div class="c-menu-dropdownright">
+                  <div class="c-menu-dropdownright__title"><span>Chức năng</span></div>
+                  <div class="c-menu-dropdownright__content">
+                    <ul class="clearfix">
+                      <li>
+                        <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting1.png'%}"><span>Trang chủ</span></div>
+                      </li>
+                      <li>
+                        <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting2.png'%}"><span>Các khoá học</span></div>
+                      </li>
+                      <li>
+                        <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting3.png'%}"><span>Cộng đồng học sinh</span></div>
+                      </li>
+                      <li>
+                        <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting4.png'%}"><span>Các cuộc thi</span></div>
+                      </li>
+                      <li>
+                        <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting5.png'%}"><span>Dự án học sinh</span></div>
+                      </li>
+                      <li>
+                        <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting6.png'%}"><span>Sự kiện</span></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="l-height-fixed"></div>
+        <div class="l-content-bg clearfix">
+          <div class="l-sidebar">
+            <div class="c-menu-left">
+              <div class="c-menu-left__top is-top">
+                <ul>
+                  <li><a href="javascript:;"><i class="icon-menu-four"></i></a>
+                    <div class="c-menu-dropdownright">
+                      <div class="c-menu-dropdownright__title"><span>Chức năng</span></div>
+                      <div class="c-menu-dropdownright__content">
+                        <ul class="clearfix">
+                          <li>
+                            <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting1.png'%}"><span>Trang chủ</span></div>
+                          </li>
+                          <li>
+                            <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting2.png'%}"><span>Các khoá học</span></div>
+                          </li>
+                          <li>
+                            <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting3.png'%}"><span>Cộng đồng học sinh</span></div>
+                          </li>
+                          <li>
+                            <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting4.png'%}"><span>Các cuộc thi</span></div>
+                          </li>
+                          <li>
+                            <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting5.png'%}"><span>Dự án học sinh</span></div>
+                          </li>
+                          <li>
+                            <div class="c-box-content"><img src="{% static 'app/images/teky/account-setting6.png'%}"><span>Sự kiện</span></div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="c-menu-left__top">
+                <ul>
+                  <li><a href="/#"><i class="icon-business-presentation"></i><span>Lớp của tôi</span></a></li>
+                  <li><a href="/#"><i class="icon-calendar"></i><span>Lịch của tôi</span></a></li>
+                  <li><a href="/#"><i class="icon-file"></i><span>Bài tập</span></a></li>
+                  <li><a href="/#"><i class="icon-script"></i><span>Dự án</span></a></li>
+                  <li><a href="/#"><i class="icon-dots"></i><span>Báo cáo</span></a></li>
+                  <li><a href="/#"><i class="icon-certificate"></i><span>Chứng chỉ</span></a></li>
+                  <li><a href="/#"><i class="feedback"></i><span>Khiếu nại</span></a></li>
+                </ul>
+              </div>
+              <div class="c-menu-left__center">
+                <ul>
+                  <li><a href="/#"><i class="icon-ico-redeem"></i><span>Redeem</span></a></li>
+                  <li><a href="/#"><i class="icon-ico-refreral"></i><span>Giới thiệu bạn</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--end l-sidebar-->
+          <div class="l-content-right"> 
+            <!--Content page part-->
+            <div class="c-frames-full">
+        <div class="row">
+          <div class="text"> <h3>Thời khóa biểu</h3>
+            <div class="left"> </div>
+        
+        </div>
+        <div class="col-md-12">
+          
+        <div class="elegant-calencar d-md-flex">
+          
+        
+        <div class="wrap-header d-flex align-items-center img" style="background-image: url({% static 'app/images/bg.png'%});">
+        <p id="reset">Hôm nay</p>
+        <div id="header" class="p-0">
+
+        <div class="head-info">
+        <div class="head-month"></div>
+        <div class="head-day"></div>
+        </div>
+
+        </div>
+        </div>
+        <div class="calendar-wrap">
+        <div class="w-100 button-wrap">
+        <div class="pre-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-left"></i></div>
+        <div class="next-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-right"></i></div>
+        </div>
+        <table id="calendar">
+        <thead>
+        <tr>
+        <th>CN</th>
+        <th>T2</th>
+        <th>T3</th>
+        <th>T4</th>
+        <th>T5</th>
+        <th>T6</th>
+        <th>T7</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td ></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+        </div>
+
+<table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Thứ </th>
+                  <th scope="col">Thứ 2</th>
+                  <th scope="col">Thứ 3</th>
+                  <th scope="col">Thứ 4</th>
+                  <th scope="col">Thứ 5</th>
+                  <th scope="col">Thứ 6</th>
+                  <th scope="col">Thứ 7</th>
+                  <th scope="col">Chủ nhật</th>
+                </tr>
+              </thead>
+              <tbody class="table table-bordered">
+                <tr>
+                  <th scope="row">Sáng</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Chiều</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tối</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!--l-footer-->
+    <div class="c-live-task"><a href="/#"><span class="c-pie-chart"></span><span class="is-notification">9+</span></a>
+      <div class="c-live-task__box">
+        <p><span>Bạn có&nbsp;</span><b class="is-red">5 nhiệm vụ&nbsp;</b><span>chưa hoàn thành</span></p>
+        <p><span>Hãy hoàn thành ngay&nbsp;</span><b class="is-green">4 nhiệm vụ&nbsp;</b><span>hôm nay</span></p>
+      </div>
+      <!--end container-->
+    </div>
+    <!--end l-footer-->
+    <!--modal-add-complain-->
+    <div class="modal fade c-modal-teky" id="modal-complain-create" tabindex="-1" role="dialog" aria-labelledby="modal-complain" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Toạ khiếu nại</h5>
+            <button class="close" data-dismiss="modal" aria-label="Close"><i class="close-white"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="c-modal-parentinfo">
+              <div class="c-modal-parentinfo__box">
+                <div class="form-group c-form-span is-select"><span>Bạn có muốn khiếu naị?</span>
+                  <select class="form-build">
+                    <option value="Việt Nam">Hoàn tiền học phí</option>
+                    <option value="Việt Nam">1</option>
+                  </select><i class="icon-modal-drop-down"></i>
+                </div>
+                <div class="form-group c-form-span is-error"><span>Học sinh</span>
+                  <input class="form-build" type="text">
+                </div>
+              </div>
+              <div class="c-modal-parentinfo__box">
+                <div class="form-group c-form-span"><span>Tờ khai trực tuyến</span>
+                  <input class="form-build is-padding-right" type="text">
+                  <div class="c-icon-penmodal"><a href="/#"><i class="icon-pen-modal"></i></a></div>
+                  <div class="c-icon-pdfmodal"><a href="/#"><i class="icon-pdf-modal"></i></a></div>
+                </div>
+                <div class="c-icon-pdfmodal2">
+                  <div class="c-textandicon-modal"><a href="/#">Nội quy/Quy định hoàn học phí</a><i class="icon-pdf-modal"></i></div>
+                </div>
+                <div class="form-group is-texterea">
+                  <textarea rows="10" placeholder="Lý do của bạn là gì?"></textarea>
+                </div>
+              </div>
+              <div class="c-modal-parentinfo__boxbottom">
+                <div class="c-check-condition">
+                  <div class="c-check-condition__1"><span>Tôi đã đọc<a href="/#">&nbsp;Nội quy/Quy định&nbsp;</a><span>hoàn học phí</span></span><i class="icon-uncheck-modal"></i></div>
+                  <div class="c-check-condition__1 is-check-complain"><span>Tôi đồng ý với thông tin trên là chính xác</span><i class="icon-uncheck-modal"></i></div>
+                </div>
+              </div>
+              <button class="btn btn-primary c-modal-parentinfo__btn">Tạo khiếu nại</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c-app-ovelay js-app-ovelay"></div>
+    <!--Optional JavaScript part-->
+    <!--jQuery first, then Popper.js, then Bootstrap JS-->
+    <script src="app/js/jquery-3.4.1.min.js"></script>
+    <script src="app/js/jquery-migrate-1.4.1.js"></script>
+    <script src="app/js/popper.min.js"></script>
+    <script src="app/js/bootstrap.min.js"></script>
+    <script src="app/js/owl.carousel.min.js"></script>
+    <script src="app/js/jquery.matchHeight-min.js"></script>
+    <script src="app/js/jquery-pincode-autotab.min.js"></script>
+    <script src="app/js/function.js"></script>
+    <script src="app/js/style.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>  
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"> </script> 
+    <script src="app/js/jquery.min.js"></script>
+    <script src="app/js/popper.js"></script>
+    <script src="app/js/bootstrap.min1.js"></script>
+    <script src="app/js/main.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"79fe47c40c9d0995","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>
+    <!--Page specific javascripts part-->
+  </body>
+</html>
         
        
         <script src="" async defer></script>

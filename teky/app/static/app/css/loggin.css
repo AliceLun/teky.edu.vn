@@ -10,7 +10,7 @@
 }
 
 #login-form {
-    color: #ffffff;
+    /* color: #ffffff; */
     border: 0px solid #afafaf;
     width: 650px;
     margin-left: 4.1%;
@@ -50,7 +50,9 @@ input[type="button"] {
 #login {
     background: #51AC74;
 }
-
+.h3{
+    color: white;
+}
 #register {
     background: #5C8AE6;
 }
@@ -74,4 +76,7 @@ body{
     background-size: cover;
     margin-top: 20px;
 
+}
+.text-danger{
+    color: red;
 }
